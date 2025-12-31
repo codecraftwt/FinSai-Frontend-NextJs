@@ -1,0 +1,405 @@
+/* Ageo Trial Font Faces */
+@font-face {
+  font-family: 'AgeoTrial-Thin';
+  src: url('./assets/fonts/AGEOTRIAL-THIN.TTF') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgeoTrial-Light';
+  src: url('./assets/fonts/AGEOTRIAL-LIGHT.TTF') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgeoTrial-Regular';
+  src: url('./assets/fonts/AgeoTrial-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgeoTrial-Medium';
+  src: url('./assets/fonts/AGEOTRIAL-MEDIUM.TTF') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgeoTrial-Semibold';
+  src: url('./assets/fonts/AGEOTRIAL-SEMIBOLD.TTF') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgeoTrial-Bold';
+  src: url('./assets/fonts/AGEOTRIAL-BOLD.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgeoTrial-Extrabold';
+  src: url('./assets/fonts/AGEOTRIAL-EXTRABOLD.TTF') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgeoTrial-Heavy';
+  src: url('./assets/fonts/AGEOTRIAL-HEAVY.TTF') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* font-family: 'AgeoTrial-Regular', 'cursive'; */
+}
+
+/* Fix for Ageo Trial font character restrictions */
+.text-carousel-number {
+  font-family: 'AgeoTrial-Regular', 'Montserrat', system-ui, sans-serif !important;
+}
+
+/* Alternative approach: Use CSS to override specific characters */
+.plus-sign {
+  font-family: 'Montserrat', system-ui, sans-serif !important;
+}
+
+/* Scrolling animation for market data */
+.scroller-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.scroller {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 13s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Train text animation - Cleaned up version */
+.train-container {
+  height: 63px;
+  overflow: hidden;
+  position: relative;
+}
+
+.train-texts {
+  display: flex;
+  flex-direction: column;
+  animation: trainMove 21s linear infinite;
+  gap: 60px;
+}
+
+.train-line {
+  height: 63px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 0 30px;
+  line-height: 1.2;
+  opacity: 0.35;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover effect to pause animation and increase opacity */
+.train-container:hover .train-texts {
+  animation-play-state: paused;
+}
+
+.train-container:hover .train-line {
+  opacity: 1;
+}
+
+/* Smooth train animation */
+@keyframes trainMove {
+  0% { 
+    transform: translateY(100px);
+  }
+  5% { 
+    transform: translateY(20px);
+  }
+  14% { 
+    transform: translateY(20px);
+  }
+  19% { 
+    transform: translateY(-43px);
+  }
+  28% { 
+    transform: translateY(-43px);
+  }
+  33% { 
+    transform: translateY(-106px);
+  }
+  42% { 
+    transform: translateY(-106px);
+  }
+  47% { 
+    transform: translateY(-169px);
+  }
+  56% { 
+    transform: translateY(-169px);
+  }
+  61% { 
+    transform: translateY(-232px);
+  }
+  70% { 
+    transform: translateY(-232px);
+  }
+  75% { 
+    transform: translateY(-295px);
+  }
+  84% { 
+    transform: translateY(-295px);
+  }
+  89% { 
+    transform: translateY(-358px);
+  }
+  100% { 
+    transform: translateY(-358px);
+  }
+}
+
+/* Background gradient styles for main container */
+.bg-radial-gradient {
+  background: radial-gradient(circle, rgba(56, 122, 255, 0.15) 0%, rgba(56, 122, 255, 0) 70%);
+}
+
+.bg-radial-gradient-purple {
+  background: radial-gradient(circle, rgba(128, 0, 255, 0.15) 0%, rgba(128, 0, 255, 0) 70%);
+}
+
+.bg-radial-gradient-teal {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, rgba(0, 255, 255, 0) 70%);
+}
+
+.bg-radial-gradient-orange {
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.15) 0%, rgba(255, 165, 0, 0) 70%);
+}
+
+.bg-radial-gradient-pink {
+  background: radial-gradient(circle, rgba(255, 0, 128, 0.15) 0%, rgba(255, 0, 128, 0) 70%);
+}
+
+/* Floating animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 10s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 12s ease-in-out infinite;
+}
+
+/* Ensure content stays above background gradients */
+.content-layer {
+  position: relative;
+  z-index: 10;
+}
+
+.gradient-layer {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+@keyframes card-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-card-float {
+  animation: card-float 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Add this to your global CSS (index.css or wherever you keep animations) */
+@keyframes market-card-float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-18px) translateX(-3px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(2px);
+  }
+  75% {
+    transform: translateY(-16px) translateX(-1px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+.animate-market-card {
+  animation: market-card-float 4s ease-in-out infinite;
+  animation-delay: calc(var(--delay) * 1s);
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.group:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* React International Phone - Simplified Styles */
+.react-international-phone-input-container {
+  height: 51px !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgb(255, 255, 255 , 0.15) !important;
+  border-radius: 4px !important;
+}
+
+.react-international-phone-input-container:focus-within {
+  outline-offset: 2px !important;
+}
+
+.react-international-phone-input {
+  background: transparent !important;
+  border: none !important;
+  color: white !important;
+  padding: 0.25rem 0.5rem !important;
+  height: 100% !important;
+  font-size: 16px !important;
+}
+
+.react-international-phone-input:focus {
+  outline: none !important;
+}
+
+.react-international-phone-input::placeholder {
+  outline: none !important;
+  color: #808080 !important;
+}
+
+.react-international-phone-country-selector {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  border-right: 1px solid rgb(55, 65, 81) !important;
+  padding-right: 0.75rem !important;
+}
+
+.react-international-phone-dial-code-preview {
+  color: white !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+}
+
+.react-international-phone-country-selector-button {
+  background: transparent !important;
+  border: none !important;
+  padding-left: 0.75rem !important;
+  height: 40px !important;
+  width: 60px !important;
+}
+
+.react-international-phone-country-selector-button:hover {
+  background-color: rgba(55, 65, 81, 0.3) !important;
+}
+
+.react-international-phone-country-selector-dropdown {
+  background-color: rgb(31, 41, 55) !important;
+  border: 1px solid rgb(55, 65, 81) !important;
+  border-radius: 0.375rem !important;
+  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important; */
+  width: 240px !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item {
+  color: white !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item:hover {
+  background-color: rgb(55, 65, 81) !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item--selected {
+  background-color: rgb(255, 255, 255) !important;
+}
+
