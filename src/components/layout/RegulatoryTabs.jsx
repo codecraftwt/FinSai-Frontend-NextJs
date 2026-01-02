@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 // Function to generate flag URL from country code

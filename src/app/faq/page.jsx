@@ -1,13 +1,9 @@
-'use client';
+import { getRouteMetadata } from '@/lib/Metadata';
+import ClientFAQPage from './ClientFAQPage';
 
-import { useEffect } from 'react';
-import FAQPage from '../../pages/Company/FAQ';
+export const metadata = getRouteMetadata('/faq');
 
-export default function FAQPageRoute() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return <FAQPage />;
+export default function FAQPage() {
+  return <ClientFAQPage />;
 }
 

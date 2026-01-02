@@ -1,13 +1,9 @@
-'use client';
+import { getRouteMetadata } from '@/lib/Metadata';
+import ClientContactSupportPage from './ClientContactSupportPage';
 
-import { useEffect } from 'react';
-import ContactSupportPage from '../../pages/Company/ContactSupport';
+export const metadata = getRouteMetadata('/contact-support');
 
-export default function ContactSupportPageRoute() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return <ContactSupportPage />;
+export default function ContactSupportPage() {
+  return <ClientContactSupportPage />;
 }
 

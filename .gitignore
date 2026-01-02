@@ -9,6 +9,7 @@
 /out/
 
 /build
+*.zip
 
 .DS_Store
 *.pem

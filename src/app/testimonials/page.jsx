@@ -1,13 +1,8 @@
-'use client';
+import { getRouteMetadata } from '@/lib/Metadata';
+import ClientTestimonialsPage from './ClientTestimonialsPage';
 
-import { useEffect } from 'react';
-import TestimonialsPage from '../../pages/Company/Testimonials';
+export const metadata = getRouteMetadata('/testimonials');
 
-export default function TestimonialsPageRoute() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return <TestimonialsPage />;
+export default function TestimonialsPage() {
+  return <ClientTestimonialsPage />;
 }
-

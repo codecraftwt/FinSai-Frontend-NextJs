@@ -1,13 +1,8 @@
-'use client';
+import { getRouteMetadata } from '@/lib/Metadata';
+import ClientHomePageEditor from './ClientHomePageEditor.jsx';
 
-import { useEffect } from 'react';
-import Editorpage from '../../pages/EditorPage';
+export const metadata = getRouteMetadata('/homepageeditor');
 
-export default function HomepageEditorPage() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return <Editorpage />;
+export default function HomePage() {
+  return <ClientHomePageEditor data={{}} scrollToSection={null} />;
 }
-
